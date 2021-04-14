@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<dictionaries>
+  <dictionary>
+        <name>contest</name>
+
+        <source>
+            <clickhouse>
+                <host>clickhouse-1.service.us-west-1c.consul</host>
+                <port>9000</port>
+                <user>default</user>
+                <password></password>
+                <db>default</db>
+                <table>contest_20210409070000</table>
+                <!--
+                <where>id=10</where>
+                -->
+                <invalidate_query>SELECT _id FROM contest_20210409070000 limit 1</invalidate_query>
+            </clickhouse>
+        </source>
+
+        <layout>
+                <complex_key_hashed />
+        </layout>
+        <structure>
+                <key>
+                    <attribute>
+                        <name>_id</name>
+                        <type>String</type>
+                    </attribute>
+                </key>
+                <attribute>
+                        <name>merchant_id</name>
+                        <type>String</type>
+                        <null_value>Null</null_value>
+                </attribute>
+                 <attribute>
+                        <name>true_brand_id</name>
+                        <type>String</type>
+                        <null_value>Null</null_value>
+                </attribute>
+        <!--        <attribute>
+                        <name>commerce_active</name>
+                        <type>String</type>
+                        <null_value>Null</null_value>
+                </attribute>
+                <attribute>
+                        <name>brand</name>
+                        <type>String</type>
+                        <null_value>Null</null_value>
+                </attribute>
+
+
+                <attribute>
+                        <name>is_clean</name>
+                        <type>String</type>
+                        <null_value>Null</null_value>
+                </attribute>
+                 <attribute>
+                        <name>is_counterfeit</name>
+                        <type>String</type>
+                        <null_value>Null</null_value>
+                </attribute>
+                <attribute>
+                        <name>product_description</name>
+                        <type>String</type>
+                        <null_value>Null</null_value>
+                </attribute>
+                 <attribute>
+                        <name>name</name>
+                        <type>String</type>
+                        <null_value>Null</null_value>
+                </attribute>
+                <attribute>
+                        <name>tags</name>
+                        <type>String</type>
+                        <null_value>Null</null_value>
+                </attribute>
+            -->
+        </structure>
+        <lifetime>300</lifetime>
+    </dictionary>
+</dictionaries>

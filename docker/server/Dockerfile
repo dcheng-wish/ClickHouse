@@ -53,7 +53,17 @@ ENV TZ UTC
 
 RUN mkdir /docker-entrypoint-initdb.d
 
-COPY docker_related_config.xml /etc/clickhouse-server/config.d/
+# User tier to point to differnt .xml files for prod/stage/dev
+ARG tier
+COPY docker_related_config_${tier}.xml /etc/clickhouse-server/config.d/docker_related_config.xml
+COPY window_function.xml /etc/clickhouse-server/users.d/window_function.xml
+
+#Define custom dictionaries
+#COPY master_users_dictionary_${tier}.xml /etc/clickhouse-server/master_users_dictionary.xml
+COPY merch_product_tags_dictionary_${tier}.xml /etc/clickhouse-server/merch_product_tags_dictionary.xml
+COPY commerce_merchant_detected_country_dictionary_${tier}.xml /etc/clickhouse-server/commerce_merchant_detected_country_dictionary.xml
+#COPY contest_dictionary_${tier}.xml /etc/clickhouse-server/contest_dictionary.xml
+
 COPY entrypoint.sh /entrypoint.sh
 
 RUN chmod +x \
