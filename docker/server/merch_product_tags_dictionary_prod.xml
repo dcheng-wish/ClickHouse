@@ -29,14 +29,14 @@
                     </attribute>
                 </key>
                 <attribute>
-                        <name>categories</name>
+                        <name>category</name>
                         <type>String</type>
-                        <null_value>Null</null_value>
+                        <null_value></null_value>
                 </attribute>
                  <attribute>
-                        <name>subcategories</name>
+                        <name>subcategory</name>
                         <type>String</type>
-                        <null_value>Null</null_value>
+                        <null_value></null_value>
                 </attribute>
         </structure>
         <lifetime>300</lifetime>

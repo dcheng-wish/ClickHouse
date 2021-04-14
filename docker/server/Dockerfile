@@ -57,6 +57,7 @@ RUN mkdir /docker-entrypoint-initdb.d
 ARG tier
 COPY docker_related_config_${tier}.xml /etc/clickhouse-server/config.d/docker_related_config.xml
 COPY window_function.xml /etc/clickhouse-server/users.d/window_function.xml
+COPY settings.xml /etc/clickhouse-server/users.d/settings.xml
 
 #Define custom dictionaries
 #COPY master_users_dictionary_${tier}.xml /etc/clickhouse-server/master_users_dictionary.xml
