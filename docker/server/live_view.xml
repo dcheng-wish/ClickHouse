@@ -2,7 +2,7 @@
 <yandex>
     <profiles>
         <default>
-            <max_memory_usage>80000000000</max_memory_usage>
+            <allow_experimental_live_view>1</allow_experimental_live_view>
         </default>
     </profiles>
 </yandex>

@@ -56,15 +56,18 @@ RUN mkdir /docker-entrypoint-initdb.d
 # User tier to point to differnt .xml files for prod/stage/dev
 ARG tier
 COPY docker_related_config_${tier}.xml /etc/clickhouse-server/config.d/docker_related_config.xml
+COPY live_view.xml /etc/clickhouse-server/users.d/live_view.xml
 COPY window_function.xml /etc/clickhouse-server/users.d/window_function.xml
 COPY settings.xml /etc/clickhouse-server/users.d/settings.xml
 
 #Define custom dictionaries
 #COPY master_users_dictionary_${tier}.xml /etc/clickhouse-server/master_users_dictionary.xml
-COPY merch_product_tags_dictionary_${tier}.xml /etc/clickhouse-server/merch_product_tags_dictionary.xml
-COPY commerce_merchant_detected_country_dictionary_${tier}.xml /etc/clickhouse-server/commerce_merchant_detected_country_dictionary.xml
 #COPY contest_dictionary_${tier}.xml /etc/clickhouse-server/contest_dictionary.xml
 
+# comment following two dictionaries to save memory for importing `requests`
+COPY merch_product_tags_dictionary_${tier}.xml /etc/clickhouse-server/merch_product_tags_dictionary.xml
+COPY commerce_merchant_detected_country_dictionary_${tier}.xml /etc/clickhouse-server/commerce_merchant_detected_country_dictionary.xml
+COPY dim_all_events_dictionary_${tier}.xml /etc/clickhouse-server/dim_all_events_dictionary.xml
 COPY entrypoint.sh /entrypoint.sh
 
 RUN chmod +x \

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<dictionaries>
+  <dictionary>
+        <name>dim_all_events</name>
+
+        <source>
+            <clickhouse>
+                <host>clickhouse-1.service.us-west-1c.consul</host>
+                <port>9000</port>
+                <user>default</user>
+                <password></password>
+                <db>default</db>
+                <table>dim_all_events</table>
+                <!--
+                <where>id=10</where>
+                -->
+                <invalidate_query>SELECT name FROM dim_all_events limit 1</invalidate_query>
+            </clickhouse>
+        </source>
+
+        <layout>
+                <flat />
+        </layout>
+        <structure>
+                <id>
+                    <name>tid</name>
+                </id>
+                <attribute>
+                        <name>name</name>
+                        <type>String</type>
+                        <null_value></null_value>
+                </attribute>
+        </structure>
+        <lifetime>300</lifetime>
+    </dictionary>
+</dictionaries>
