@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<yandex>
+    <profiles>
+        <default>
+            <connect_timeout_with_failover_ms>1000</connect_timeout_with_failover_ms>
+        </default>
+    </profiles>
+</yandex>

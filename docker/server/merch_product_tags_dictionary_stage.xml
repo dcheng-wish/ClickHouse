@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<dictionaries>
+  <dictionary>
+        <name>merch_product_tags</name>
+
+        <source>
+            <clickhouse>
+                <host>clickhouse-1.service.us-west-1c.consul</host>
+                <port>9000</port>
+                <user>default</user>
+                <password></password>
+                <db>default</db>
+                <table>merch_product_tags</table>
+                <!--
+                <where>id=10</where>
+                -->
+                <invalidate_query>SELECT product_id FROM merch_product_tags limit 1</invalidate_query>
+            </clickhouse>
+        </source>
+
+        <layout>
+                <complex_key_hashed />
+        </layout>
+        <structure>
+                <key>
+                    <attribute>
+                        <name>product_id</name>
+                        <type>String</type>
+                    </attribute>
+                </key>
+                <attribute>
+                        <name>category</name>
+                        <type>String</type>
+                        <null_value></null_value>
+                </attribute>
+                 <attribute>
+                        <name>subcategory</name>
+                        <type>String</type>
+                        <null_value></null_value>
+                </attribute>
+        </structure>
+        <lifetime>300</lifetime>
+    </dictionary>
+</dictionaries>

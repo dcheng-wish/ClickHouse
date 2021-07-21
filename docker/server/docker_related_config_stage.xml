@@ -13,7 +13,8 @@
     <mark_cache_size>524288000</mark_cache_size>
 
     <remote_servers>
-        <perftest_3shards_1replicas>
+        <perftest_10shards_3replicas>
+    <!-- get rid of master table
             <shard>
                 <weight>0</weight>
                 <replica>
@@ -21,135 +22,194 @@
                     <port>9000</port>
                 </replica>
             </shard>
-   <!-- reserved for dimension tables
+   -->
+   <!-- reserved for dimension tables setting weight to 0
+
             <shard>
+                <weight>0</weight>
                 <replica>
                     <host>clickhouse-stage-1.service.consul</host>
                     <port>9000</port>
                 </replica>
             </shard>
-    -->
+            -->
             <shard>
+                <internal_replication>true</internal_replication>
                 <replica>
                     <host>clickhouse-stage-2.service.consul</host>
                     <port>9000</port>
-                </replica>
-            </shard>
-            <shard>
+                </replica>                
                 <replica>
                     <host>clickhouse-stage-3.service.consul</host>
                     <port>9000</port>
                 </replica>
-            </shard>
-            <shard>
                 <replica>
                     <host>clickhouse-stage-4.service.consul</host>
                     <port>9000</port>
                 </replica>
             </shard>
             <shard>
+                <internal_replication>true</internal_replication>
                 <replica>
                     <host>clickhouse-stage-5.service.consul</host>
                     <port>9000</port>
                 </replica>
-            </shard>
-            <shard>
                 <replica>
                     <host>clickhouse-stage-6.service.consul</host>
                     <port>9000</port>
                 </replica>
-            </shard>
-            <shard>
                 <replica>
                     <host>clickhouse-stage-7.service.consul</host>
                     <port>9000</port>
                 </replica>
             </shard>
             <shard>
+                <internal_replication>true</internal_replication>
                 <replica>
                     <host>clickhouse-stage-8.service.consul</host>
                     <port>9000</port>
                 </replica>
-            </shard>
-            <shard>
                 <replica>
                     <host>clickhouse-stage-9.service.consul</host>
                     <port>9000</port>
                 </replica>
-            </shard>
-            <shard>
                 <replica>
                     <host>clickhouse-stage-10.service.consul</host>
                     <port>9000</port>
                 </replica>
             </shard>
             <shard>
+                <internal_replication>true</internal_replication>
                 <replica>
                     <host>clickhouse-stage-11.service.consul</host>
                     <port>9000</port>
                 </replica>
-            </shard>
-            <shard>
                 <replica>
                     <host>clickhouse-stage-12.service.consul</host>
                     <port>9000</port>
                 </replica>
-            </shard>
-            <shard>
                 <replica>
                     <host>clickhouse-stage-13.service.consul</host>
                     <port>9000</port>
                 </replica>
             </shard>
             <shard>
+                <internal_replication>true</internal_replication>
                 <replica>
                     <host>clickhouse-stage-14.service.consul</host>
                     <port>9000</port>
                 </replica>
-            </shard>
-            <shard>
                 <replica>
                     <host>clickhouse-stage-15.service.consul</host>
                     <port>9000</port>
                 </replica>
-            </shard>
-            <shard>
                 <replica>
                     <host>clickhouse-stage-16.service.consul</host>
                     <port>9000</port>
                 </replica>
             </shard>
             <shard>
+                <internal_replication>true</internal_replication>
                 <replica>
                     <host>clickhouse-stage-17.service.consul</host>
                     <port>9000</port>
                 </replica>
-            </shard>
-            <shard>
                 <replica>
                     <host>clickhouse-stage-18.service.consul</host>
                     <port>9000</port>
                 </replica>
-            </shard>
-            <shard>
                 <replica>
                     <host>clickhouse-stage-19.service.consul</host>
                     <port>9000</port>
                 </replica>
             </shard>
             <shard>
+                <internal_replication>true</internal_replication>
                 <replica>
                     <host>clickhouse-stage-20.service.consul</host>
                     <port>9000</port>
                 </replica>
+                <replica>
+                    <host>clickhouse-stage-21.service.consul</host>
+                    <port>9000</port>
+                </replica>
+                <replica>
+                    <host>clickhouse-stage-22.service.consul</host>
+                    <port>9000</port>
+                </replica>
             </shard>
-        </perftest_3shards_1replicas>
+            <shard>
+                <internal_replication>true</internal_replication>
+                <replica>
+                    <host>clickhouse-stage-23.service.consul</host>
+                    <port>9000</port>
+                </replica>
+                <replica>
+                    <host>clickhouse-stage-24.service.consul</host>
+                    <port>9000</port>
+                </replica>
+                <replica>
+                    <host>clickhouse-stage-25.service.consul</host>
+                    <port>9000</port>
+                </replica>
+            </shard>
+            <shard>
+                <internal_replication>true</internal_replication>
+                <replica>
+                    <host>clickhouse-stage-26.service.consul</host>
+                    <port>9000</port>
+                </replica>
+                <replica>
+                    <host>clickhouse-stage-27.service.consul</host>
+                    <port>9000</port>
+                </replica>
+                <replica>
+                    <host>clickhouse-stage-28.service.consul</host>
+                    <port>9000</port>
+                </replica>
+            </shard>
+            <shard>
+                <internal_replication>true</internal_replication>
+                <replica>
+                    <host>clickhouse-stage-29.service.consul</host>
+                    <port>9000</port>
+                </replica>
+                <replica>
+                    <host>clickhouse-stage-30.service.consul</host>
+                    <port>9000</port>
+                </replica>
+                <replica>
+                    <host>clickhouse-stage-31.service.consul</host>
+                    <port>9000</port>
+                </replica>
+            </shard>
+        </perftest_10shards_3replicas>
     </remote_servers>
 
+    <zookeeper>
+        <node index="1">
+            <host>zk-ensemble-0.zk-server.clickhouse-zookeeper.svc.cluster.local</host>
+            <port>2181</port>
+        </node>
+        <node index="2">
+            <host>zk-ensemble-1.zk-server.clickhouse-zookeeper.svc.cluster.local</host>
+            <port>2181</port>
+        </node>
+        <node index="3">
+            <host>zk-ensemble-2.zk-server.clickhouse-zookeeper.svc.cluster.local</host>
+            <port>2181</port>
+        </node>
+    </zookeeper>
+
+    <!--  shardid, replicaid, nodeid to be replaced in k8s jsonnet file-->
+    <macros>
+        <shard>shardid</shard>
+        <replica>replicaid</replica>
+    </macros>
 
     <dictionaries_lazy_load>false</dictionaries_lazy_load>
     <!--
     <max_server_memory_usage_to_ram_ratio>0.9</max_server_memory_usage_to_ram_ratio>
     -->
-
+    <interserver_http_host>clickhouse-stage-nodeid.service.consul</interserver_http_host>
 </yandex>
