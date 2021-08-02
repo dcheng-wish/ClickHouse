@@ -57,6 +57,7 @@ RUN mkdir /docker-entrypoint-initdb.d
 ARG tier
 COPY docker_related_config_${tier}.xml /etc/clickhouse-server/config.d/docker_related_config.xml
 COPY connection_settings.xml /etc/clickhouse-server/config.d/connection_settings.xml
+COPY text_log.xml /etc/clickhouse-server/config.d/text_log.xml
 COPY live_view.xml /etc/clickhouse-server/users.d/live_view.xml
 COPY window_function.xml /etc/clickhouse-server/users.d/window_function.xml
 COPY settings.xml /etc/clickhouse-server/users.d/settings.xml
